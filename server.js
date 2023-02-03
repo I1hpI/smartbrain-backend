@@ -24,7 +24,7 @@ const db = knex({
     port:5432,
     user: "nmtrcnbh",
     password: "GC6X-PPMnuFihh3ncA-_3hV9_ImFRL3n",
-    database: "cloud-smartbrain",
+    database: "nmtrcnbh",
   },
 });
 
