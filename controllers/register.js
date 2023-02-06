@@ -4,7 +4,10 @@ const handleRegister = (req,res,db,bcrypt) => {
    if(!email || !name || !password){
      return res.status(400).json('incorect form submission');
    }
+  //  hashing the password 
     const hash = bcrypt.hashSync(password);
+    // creating transaction to insert the hash and email into the login table
+    // using transcation inorder for the below steps be a part of same transaction
     db.transaction(trx => {
       trx
         .insert({

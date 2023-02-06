@@ -7,6 +7,7 @@ const handleSignin=(db,bcrypt)=>(req,res)=> {
     db.select('email','hash').from('login')
     .where('email','=', email)
     .then(data=>{
+      // compare if the above received data matches with the hashed password created by bycrypt
       const isValid = bcrypt.compareSync(password, data[0].hash);
       if (isValid)
       {

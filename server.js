@@ -7,25 +7,26 @@ const signin= require('./controllers/signin');
 const profile= require('./controllers/profile');
 const image= require('./controllers/image');
 
-const db = knex({
-  client: "pg",
-  connection: {
-    host: "127.0.0.1",
-    user: "postgres",
-    password: "test",
-    database: "smart-brain",
-  },
-});
+// connecting server to database 
 // const db = knex({
 //   client: "pg",
 //   connection: {
-//     host: "satao.db.elephantsql.com",
-//     port:5432,
-//     user: "nmtrcnbh",
-//     password: "GC6X-PPMnuFihh3ncA-_3hV9_ImFRL3n",
-//     database: "nmtrcnbh",
+//     host: "127.0.0.1",
+//     user: "postgres",
+//     password: "test",
+//     database: "smart-brain",
 //   },
 // });
+const db = knex({
+  client: "pg",
+  connection: {
+    host: "satao.db.elephantsql.com",
+    port:5432,
+    user: "nmtrcnbh",
+    password: "GC6X-PPMnuFihh3ncA-_3hV9_ImFRL3n",
+    database: "nmtrcnbh",
+  },
+});
 
 // db.select('*').from('users').then(data=>{
 //     console.log(data);
